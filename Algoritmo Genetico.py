@@ -17,10 +17,10 @@ valor = [ 100, 60, 70, 15, 15 ]
 
 # Considera que el tamaño de la poblacion es el doble, ya que se el tamaño se duplicara con la inversa de cada individuo que se genero.
 # Si se generan individuos iguales con la inversa no se van a agregar a la generacion inicial por lo que pueden ser menos del doble.
-poblacion_tamaño = 5
+poblacion_tamaño = 32
 peso_max = 60
 #peso_max = 40
-generaciones_max = 25
+generaciones_max = 5
 
 def randomizar_idividuo(p): 
 
@@ -64,9 +64,9 @@ def restriccion_peso(peso_individuo):
     return False
 
 def encontrar_peso_valor(poblacion):
-    peso_individuo = [0]*len(poblacion)*2
-    valor_individuo = [0]*len(poblacion)*2
-    peso_restriccion = [False]*len(poblacion)*2
+    peso_individuo = [0]*len(poblacion)
+    valor_individuo = [0]*len(poblacion)
+    peso_restriccion = [False]*len(poblacion)
 
     for x in range(len(poblacion)): 
         individuo = dividir_individuo(poblacion[x])
