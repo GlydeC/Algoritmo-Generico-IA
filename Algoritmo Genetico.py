@@ -17,7 +17,7 @@ valor = [ 100, 60, 70, 15, 15 ]
 
 # Considera que el tamaño de la poblacion es el doble, ya que se el tamaño se duplicara con la inversa de cada individuo que se genero.
 # Si se generan individuos iguales con la inversa no se van a agregar a la generacion inicial por lo que pueden ser menos del doble.
-poblacion_tamaño = 3
+poblacion_tamaño = 5
 peso_max = 60
 #peso_max = 40
 generaciones_max = 25
@@ -85,6 +85,16 @@ def checar_repetido_lista(lista, individuo):
         if lista[i] == individuo:
             return True
     return False
+
+def encontrar_solucion(poblacion, poblacion_valores):
+    individuo_maximo = 0
+    valor_maximo = 0
+    for x in range(len(poblacion)):
+        if poblacion_valores[x] > valor_maximo:
+            individuo_maximo = x
+            valor_maximo = poblacion_valores[x]
+    
+    return poblacion[individuo_maximo], valor_maximo
 
 def cruzar_individuos(i1, i2):
     individuo1 = dividir_individuo(i1)
@@ -154,17 +164,15 @@ def generar_hijos(generacion_anterior, generacion_anterior_valores):
     for i in range(len(generacion_nueva)):
         print(dividir_individuo(generacion_nueva[i]))
 
+    # Encontrar el mejor individuo
+    solucion_individuo, valor_solucion_individuo = encontrar_solucion(generacion_anterior, generacion_anterior_valores)
+
+    if not checar_repetido_lista(generacion_nueva, solucion_individuo):
+        generacion_nueva.append(solucion_individuo)
+        
     return generacion_nueva
 
-def encontrar_solucion(poblacion, poblacion_valores):
-    individuo_maximo = 0
-    valor_maximo = 0
-    for x in range(len(poblacion)):
-        if poblacion_valores[x] > valor_maximo:
-            individuo_maximo = x
-            valor_maximo = poblacion_valores[x]
-    
-    return poblacion[individuo_maximo], valor_maximo
+
 
 def main():
     # Generar la poblacion inicial
