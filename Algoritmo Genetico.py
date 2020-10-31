@@ -1,7 +1,7 @@
 import sys
 import re
 import random
-from collections import deque, defaultdict
+
 
 # Puede jugar con el tamaño de la poblacion y numero de generaciones
 # Tambien el codigo esta escrito para soportar diferentes problemas, ergo, puede cambiar el peso max, los valores del array de pesos y valores
