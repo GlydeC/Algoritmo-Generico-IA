@@ -17,7 +17,7 @@ valor = [ 100, 60, 70, 15, 15 ]
 
 # Considera que el tamaño de la poblacion es el doble, ya que se el tamaño se duplicara con la inversa de cada individuo que se genero.
 # Si se generan individuos iguales con la inversa no se van a agregar a la generacion inicial por lo que pueden ser menos del doble.
-poblacion_tamaño = 32
+poblacion_tamaño = 16
 peso_max = 60
 #peso_max = 40
 generaciones_max = 5
