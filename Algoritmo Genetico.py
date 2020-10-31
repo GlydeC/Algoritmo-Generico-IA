@@ -6,14 +6,21 @@ from collections import deque, defaultdict
 # Puede jugar con el tamaño de la poblacion y numero de generaciones
 # Tambien el codigo esta escrito para soportar diferentes problemas, ergo, puede cambiar el peso max, los valores del array de pesos y valores
 # Puede agregar o substraer elementos del array de pesos y valores, aunque solo hay que tomar en cuenta que el tamaño de los dos arrays TIENE que ser igual
+
+# Ejercicio que resolvimos en clase
 pesos = [ 42, 23, 21, 15, 7 ]
 valor = [ 100, 60, 70, 15, 15 ]
 
+# Ejemplo que vimos en clase
+#pesos = [30, 20, 22, 10, 7]
+#valor = [100, 75, 80, 40, 20]
+
 # Considera que el tamaño de la poblacion es el doble, ya que se el tamaño se duplicara con la inversa de cada individuo que se genero.
 # Si se generan individuos iguales con la inversa no se van a agregar a la generacion inicial por lo que pueden ser menos del doble.
-poblacion_tamaño = 2
+poblacion_tamaño = 3
 peso_max = 60
-generaciones_max = 10
+#peso_max = 40
+generaciones_max = 25
 
 def randomizar_idividuo(p): 
 
