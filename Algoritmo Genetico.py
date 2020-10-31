@@ -3,6 +3,9 @@ import re
 import random
 from collections import deque, defaultdict
 
+# Puede jugar con el tamaño de la poblacion y numero de generaciones
+# Tambien el codigo esta escrito para soportar diferentes problemas, ergo, puede cambiar el peso max, los valores del array de pesos y valores
+# Puede agregar o substraer elementos del array de pesos y valores, aunque solo hay que tomar en cuenta que el tamaño de los dos arrays TIENE que ser igual
 pesos = [ 42, 23, 21, 15, 7 ]
 valor = [ 100, 60, 70, 15, 15 ]
 
